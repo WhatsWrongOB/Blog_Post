@@ -30,9 +30,12 @@ const Practice = () => {
     };
 
     const deletePost = (index) => {
-        const deletedPost = [...upload];
-        deletedPost.splice(index, 1);
-        setUpload(deletedPost);
+        const confirmDelete = window.confirm('Are you sure you want to delete this post ?')
+        if (confirmDelete) {
+            const deletedPost = [...upload];
+            deletedPost.splice(index, 1);
+            setUpload(deletedPost);
+        }
     };
 
     const editPost = (index) => {
